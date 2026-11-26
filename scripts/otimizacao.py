@@ -1,8 +1,12 @@
 
 import csv
 import sys
+from pathlib import Path
 import numpy as np
 
+
+ROOT = Path(__file__).resolve().parent.parent
+PASTA_DADOS = ROOT / "dados"
 
 TOLERANCIA = 1e-10
 MAX_ITERACOES = 1000
@@ -16,7 +20,7 @@ np.set_printoptions(precision=8, suppress=True)
 
 def carregar_dados():
 
-    with open("dados.csv", encoding="utf-8") as arquivo:
+    with open(PASTA_DADOS / "dados.csv", encoding="utf-8") as arquivo:
 
         dados = list(csv.DictReader(arquivo))
 
@@ -193,7 +197,7 @@ def gauss_seidel(A, B):
         )
 
     with open(
-        "convergencia.csv",
+        PASTA_DADOS / "convergencia.csv",
         "w",
         newline="",
         encoding="utf-8"

@@ -1,6 +1,7 @@
 
 import csv
 import io
+from pathlib import Path
 import numpy as np
 
 from contextlib import redirect_stdout
@@ -10,6 +11,10 @@ from otimizacao import (
     montar_sistema,
     eliminacao_gauss
 )
+
+
+ROOT = Path(__file__).resolve().parent.parent
+PASTA_DADOS = ROOT / "dados"
 
 
 # ==========================================
@@ -35,7 +40,7 @@ with redirect_stdout(io.StringIO()):
 # ==========================================
 
 with open(
-    "convergencia.csv",
+    PASTA_DADOS / "convergencia.csv",
     encoding="utf-8"
 ) as arquivo:
 

@@ -4,6 +4,11 @@ import time
 import random
 import platform
 import statistics
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent.parent
+PASTA_DADOS = ROOT / "dados"
 
 
 # ==========================================
@@ -21,7 +26,7 @@ TAMANHOS = [
 
 REPETICOES = 15
 
-ARQUIVO_SAIDA = "dados.csv"
+ARQUIVO_SAIDA = PASTA_DADOS / "dados.csv"
 
 
 # ==========================================

@@ -12,7 +12,9 @@ from otimizacao import carregar_dados, montar_sistema
 # CONFIGURACOES GERAIS
 # ==========================================
 
-PASTA = Path("figuras/graficos")
+ROOT = Path(__file__).resolve().parent.parent
+PASTA = ROOT / "figuras" / "graficos"
+PASTA_DADOS = ROOT / "dados"
 PASTA.mkdir(parents=True, exist_ok=True)
 
 AZUL = "#24578A"
@@ -360,7 +362,7 @@ def grafico_contornos():
 def grafico_convergencia():
 
     with open(
-        "convergencia.csv",
+        PASTA_DADOS / "convergencia.csv",
         encoding="utf-8"
     ) as arquivo:
 

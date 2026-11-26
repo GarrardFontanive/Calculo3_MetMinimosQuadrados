@@ -44,13 +44,15 @@ Versões em PDF dos gráficos também estão disponíveis em `figuras/graficos/`
 
 ```text
 .
-├── benchmark.py             # mede o custo da busca sequencial
-├── otimizacao.py            # Gauss, Gauss-Seidel e análise do ajuste
-├── comparacao.py            # compara os métodos com NumPy
-├── graficos.py              # gera PNG e PDF dos gráficos
-├── dados.csv                # tempos medidos do benchmark
-├── convergencia.csv         # histórico das iterações de Gauss-Seidel
-├── ambiente.txt             # registro do ambiente computacional
+├── scripts/                 # códigos Python executáveis
+│   ├── benchmark.py         # mede o custo da busca sequencial
+│   ├── otimizacao.py        # Gauss, Gauss-Seidel e análise do ajuste
+│   ├── comparacao.py        # compara os métodos com NumPy
+│   └── graficos.py          # gera PNG e PDF dos gráficos
+├── dados/                   # entradas, saídas tabulares e ambiente
+│   ├── dados.csv            # tempos medidos do benchmark
+│   ├── convergencia.csv     # histórico de Gauss-Seidel
+│   └── ambiente.txt         # registro do ambiente computacional
 └── figuras/
     ├── graficos/            # resultados visuais reproduzíveis
     └── prints/              # evidências das execuções
@@ -70,19 +72,19 @@ Na sequência, os comandos principais são:
 
 ```bash
 # 1. (Opcional) gerar novamente o benchmark
-python benchmark.py
+python scripts/benchmark.py
 
 # 2. Resolver por eliminação de Gauss
-python otimizacao.py gauss
+python scripts/otimizacao.py gauss
 
 # 3. Resolver por Gauss-Seidel e atualizar convergencia.csv
-python otimizacao.py seidel
+python scripts/otimizacao.py seidel
 
 # 4. Comparar Gauss, Gauss-Seidel e NumPy
-python comparacao.py
+python scripts/comparacao.py
 
 # 5. Recriar todos os gráficos em PNG e PDF
-python graficos.py
+python scripts/graficos.py
 ```
 
 Os scripts devem ser executados a partir da raiz do repositório, pois os arquivos CSV são carregados por caminhos relativos.
@@ -95,7 +97,8 @@ O sistema normal é construído a partir da matriz de projeto `[n, 1]`. A funç�
 
 ## Organização dos arquivos
 
-- `dados.csv` e `convergencia.csv` são resultados tabulares das execuções.
+- `dados/` concentra os CSVs e o registro do ambiente computacional.
+- `scripts/` concentra os programas Python do experimento.
 - `figuras/graficos/` reúne as visualizações finais, em formatos raster e vetorial.
 - `figuras/prints/` preserva capturas das etapas e saídas de terminal.
 - `ambiente.txt` documenta o ambiente utilizado para a coleta original.
