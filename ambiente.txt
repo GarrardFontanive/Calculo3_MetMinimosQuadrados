@@ -1,0 +1,10 @@
+=== AMBIENTE COMPUTACIONAL ===
+Thu Nov 26 12:05:32 AM -03 2026
+Linux 7.3.5-arch1-1
+Python 3.14.10
+CPU(s):                                  12
+Model name:                              13th Gen Intel(R) Core(TM) i5-13420H
+NUMA node0 CPU(s):                       0-11
+               total        used        free      shared  buff/cache   available
+Mem:            23Gi       6.0Gi        14Gi       837Mi       3.7Gi        17Gi
+Swap:           11Gi       988Mi        10Gi
