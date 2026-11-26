@@ -1,0 +1,1 @@
+Metodo dos minimos quadrados
